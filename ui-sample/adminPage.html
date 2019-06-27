@@ -81,14 +81,14 @@
                 "msgid": ""
             },
             "request": {
-                "entityType": ["Person"],
+                "entityType": ["Student"],
                 "filters": {
                 },
-                "viewTemplateId": "Person_SearchResult.json"
+                "viewTemplateId": "Student_SearchResult.json"
             }
         };
         if (lang == 'English') {
-            cookedVal.request.viewTemplateId = "Person_SearchResult.json"
+            cookedVal.request.viewTemplateId = "Student_SearchResult.json"
         } else if (lang == 'Spanish') {
             cookedVal.request.viewTemplateId = "Person_SearchResult_es.json"
         }
@@ -104,7 +104,7 @@
                 dataType: "json",
                 success: function (msg) {
                     personRecords = []
-                    _.map(msg.result.Person, (person) => {
+                    _.map(msg.result.Student, (person) => {
                         personRecords.push(_.omit(person, ['@type', '_osUpdatedBy', '_osCreatedAt', '_osCreatedBy', '_osCreatedAt', '_osUpdatedAt']))
                     });
                     var colHeader = Object.keys(personRecords[0]);
@@ -190,11 +190,11 @@
                 contentType: "application/json",
                 dataType: "json",
                 success: function (msg) {
-                    if (msg.result.Person.length > 0) {
+                    if (msg.result.Student.length > 0) {
                         document.getElementById("noResult").textContent = "";
                         $("table").find("tr:not(:first)").remove();
                         personRecords = []
-                        _.map(msg.result.Person, (person) => {
+                        _.map(msg.result.Student, (person) => {
                             personRecords.push(_.omit(person, ['@type', '_osUpdatedBy', '_osCreatedAt', '_osCreatedBy', '_osCreatedAt', '_osUpdatedAt']));
                         });
                         var colHeader = Object.keys(personRecords[0]);

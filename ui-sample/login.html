@@ -199,7 +199,7 @@
           "key": "",
           "msgid": ""
         },
-        "request": { "Person": {} }
+        "request": { "Student": {} }
       };
 
       var schema;
@@ -302,7 +302,7 @@
           "msgid": ""
         },
         "request": {
-          "entityType": ["Person"],
+          "entityType": ["Student"],
           "filters": {
             "phone": {
               "eq": phone
@@ -319,9 +319,9 @@
         contentType: "application/json",
         dataType: "json",
         success: function (msg) {
-          console.log("Searching registry " + Array.isArray(msg.result.Person) + " : " + msg.result.Person.length)
-          if (Array.isArray(msg.result.Person) && msg.result.Person.length == 1) {
-            ID = msg.result.Person[0].osid
+          console.log("Searching registry " + Array.isArray(msg.result.Student) + " : " + msg.result.Student.length)
+          if (Array.isArray(msg.result.Student) && msg.result.Student.length == 1) {
+            ID = msg.result.Student[0].osid
             generateOTP(phone);
             document.getElementById("logIn").style.display = "inline-block";
             document.getElementById("validate").style.display = "none";

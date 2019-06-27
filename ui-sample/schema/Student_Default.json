@@ -1,22 +1,22 @@
 {
-    "subject": "Person",
+    "subject": "Student",
     "fields": [
       {
         "name": "name",
-        "title": "Nombre",
+        "title": "Name",
         "display": true
       },
       {
         "name": "phone",
-        "title": "Teléfono"
+        "title": "phone"
       },
       {
         "name": "school",
-        "title": "Colegio"
+        "title": "School"
       },
       {
         "name": "teacherId",
-        "title": "ProfesorId"
+        "title": "TeacherId"
       },
       {
         "name": "isAdmin",

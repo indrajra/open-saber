@@ -1,0 +1,18 @@
+{
+    "subject": "Student",
+    "fields": [
+      {
+        "name": "studentName",
+        "title": "Student",
+        "display": true
+      },
+      {
+        "name": "birthDate",
+        "title": "Date of birth"
+      },
+      {
+        "name": "state",
+        "title": "State"
+      }
+    ]
+  }

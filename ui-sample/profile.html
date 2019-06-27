@@ -115,7 +115,7 @@
                     "msgid": ""
                 },
                 "request": {
-                    "Person": {
+                    "Student": {
                     }
                 }
             }
@@ -130,7 +130,7 @@
                     "msgid": ""
                 },
                 "request": {
-                    "Person": {
+                    "Student": {
                     }
                 }
             }
@@ -158,7 +158,7 @@
                     "msgid": ""
                 },
                 "request": {
-                    "Person": {
+                    "Student": {
                     }
                 }
             }
@@ -200,14 +200,14 @@
 
             function getPersonDetails(cb) {
                 searchReq.request = {
-                    "entityType": ["Person"],
+                    "entityType": ["Student"],
                     "filters": {
                         "osid": { "eq": g_personOSid.slice(2, g_personOSid.length) }
                     },
-                    "viewTemplateId": "Person_Default.json"
+                    "viewTemplateId": "Student_Default.json"
                 }
                 if (g_lang === 'English') {
-                    searchReq.request.viewTemplateId = "Person_Default.json";
+                    searchReq.request.viewTemplateId = "Student_Default.json";
                 } else if (g_lang === 'Spanish') {
                     searchReq.request.viewTemplateId = "Person_Default_es.json";
                     console.log("Set viewTemplate to spanish")
@@ -220,9 +220,9 @@
                 http.onload = function () {
                     var obj = JSON.parse(http.responseText);
                     console.log("this is the " + JSON.stringify(obj))
-                    setNameInProfileSection(obj.result.Person[0])
+                    setNameInProfileSection(obj.result.Student[0])
 
-                    g_thisPerson = obj.result.Person[0];
+                    g_thisPerson = obj.result.Student[0];
                     console.log(JSON.stringify(g_thisPerson))
                     // g_isAdmin = g_thisPerson.isAdmin
                     console.log("This user is an admin " + g_isAdmin)
@@ -342,7 +342,7 @@
             }
 
             function getViewSchemaEng(cb) {
-                getViewSchema('schema/Person_Default.json', cb);
+                getViewSchema('schema/Student_Default.json', cb);
             }
 
             function getViewSchemaSpanish(cb) {
@@ -417,8 +417,8 @@
             }
 
             function update() {
-                updatePersonRequest.request.Person = g_thisNewPerson;
-                updatePersonRequest.request.Person.isApproved = false;
+                updatePersonRequest.request.Student = g_thisNewPerson;
+                updatePersonRequest.request.Student.isApproved = false;
 
                 const http = new XMLHttpRequest()
                 http.open('POST', "http://localhost:8080/update")
@@ -452,7 +452,7 @@
                     for (key in g_thisPerson) {
                         if(key === 'isAdmin' || key === 'osid') 
                         continue;
-                        // Derive the name from the title and setup the new Person object
+                        // Derive the name from the title and setup the new Student object
                         var childElemnet = document.getElementById(key);
 
                         getDbColumnNameFromTitle(key, function (err, name) {
@@ -496,7 +496,7 @@
 
             function downloadJson() {
                 var g_urlParams = new URLSearchParams(location.search);
-                downloadProfileRequest.request.Person.osid = g_urlParams.get('osid')
+                downloadProfileRequest.request.Student.osid = g_urlParams.get('osid')
                 downloadProfileRequest.request.includeSignatures = true
                 $.ajax({
                     url: "http://localhost:8080/read",
@@ -507,10 +507,10 @@
                     dataType: "json",
                     success: function (msg) {
                         console.log(JSON.stringify(msg))
-                        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(msg.result.Person));
+                        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(msg.result.Student));
                         var dlAnchorElem = document.getElementById('downloadAnchorElem');
                         dlAnchorElem.setAttribute("href", dataStr);
-                        dlAnchorElem.setAttribute("download", "Person.json");
+                        dlAnchorElem.setAttribute("download", "Student.json");
                         dlAnchorElem.click();
                     }
                 });
@@ -578,7 +578,7 @@
                         "msgid": ""
                     },
                     "request": {
-                        "Person": {
+                        "Student": {
                             "osid": g_thisPersonVerification.personId,
                             "isApproved": status
 

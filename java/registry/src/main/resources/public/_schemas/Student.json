@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "Student": {
+      "$ref": "#/definitions/Student"
+    }
+  },
+  "title": "Student",
+  "required": [
+    "Student"
+  ],
+  "definitions": {
+    "Student": {
+      "$id": "#/properties/Student",
+      "type": "object",
+      "title": "The Student Schema",
+      "required": [
+        "studentName",
+        "birthDate",
+        "highestQualification",
+        "fatherName",
+        "address",
+        "district",
+        "state",
+        "dateOfAdmission",
+        "trade",
+        "itiCode"
+      ],
+      "properties": {
+        "studentName": {
+          "$id": "#/properties/studentName",
+          "type": "string",
+          "title": "Full name"
+        },
+        "birthDate": {
+          "$id": "#/properties/birthDate",
+          "type": "string",
+          "format": "date",
+          "$comment": "YYYY-MM-DD format",
+          "examples": [
+            "1990-12-01"
+          ]
+        },
+        "highestQualification": {
+          "$id": "#/properties/highestQualification",
+          "type": "string",
+          "title": "Highest qualification"
+        },
+        "fatherName": {
+          "$id": "#/properties/fatherName",
+          "type": "string",
+          "title": "Father name"
+        },
+        "address": {
+          "$id": "#/properties/Address",
+          "type": "string",
+          "title": "Address"
+        },
+        "district": {
+          "$id": "#/properties/District",
+          "type": "string",
+          "title": "District"
+        },
+        "state": {
+          "$id": "#/properties/State",
+          "type": "string",
+          "title": "State",
+          "enum": [
+            "UP",
+            "TN",
+            "KL",
+            "KA"
+          ],
+          "examples": [
+            "KA"
+          ]
+        },
+        "dateofAdmission": {
+          "$id": "#/properties/DateofAdmission",
+          "type": "string",
+          "format": "date",
+          "$comment": "YYYY-MM-DD format",
+          "examples": [
+            "1990-12-01"
+          ],
+          "title": "Date of Admission"
+        },
+        "trade": {
+          "$id": "#/properties/Trade",
+          "type": "string",
+          "title": "Trade"
+        },
+        "itiCode": {
+          "$id": "#/properties/ITICode",
+          "type": "string",
+          "title": "Trade"
+        }
+      }
+    }
+  }
+}

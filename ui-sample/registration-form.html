@@ -52,17 +52,17 @@
                     "key": "",
                     "msgid": ""
                 },
-                "request": { "Person": {} }
+                "request": { "Student": {} }
             };
             var schema = "";
             var registerBtnText = "Register"
             var urlParams = new URLSearchParams(location.search);
             if (urlParams.get('lang') == 'English') {
                 dataLocalizeRefresh('en', 'English')
-                schema = "./schema/Person.json"
+                schema = "./schema/Student.json"
             } else {
                 dataLocalizeRefresh('es', 'Spanish')
-                schema = "./schema/Person-es.json"
+                schema = "./schema/Student-es.json"
                 registerBtnText = "Registro"
             }
 
@@ -127,7 +127,7 @@
                                         value.photo = photo.name
                                     }
 
-                                    cookedVal["request"]["Person"] = value;
+                                    cookedVal["request"]["Student"] = value;
                                     console.log(JSON.stringify(cookedVal));
 
                                     $.ajax({
@@ -136,9 +136,9 @@
                                         contentType: "application/json",
                                         data: JSON.stringify(cookedVal),
                                         success: function (data) {
-                                            // params.request.personId = data.result.Person.osid;
+                                            // params.request.personId = data.result.Student.osid;
                                             // console.log('personid', params.request.personId);
-                                            personVerify(data.result.Person.osid);
+                                            personVerify(data.result.Student.osid);
 
                                         },
                                         error: function () {
@@ -172,7 +172,7 @@
                                             contentType: "application/json",
                                             data: JSON.stringify(params),
                                             success: function (data) {
-                                                // params.request.personId = data.result.Person.osid;
+                                                // params.request.personId = data.result.Student.osid;
                                                 console.log('parma', data)
                                                 document.location.href = "./profile.html?osid=" + osid + "&lang=English";
                                             },

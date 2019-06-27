@@ -34,10 +34,10 @@
                                     "key": "",
                                     "msgid": ""
                                 },
-                                "request": {"Person": {}} 
+                                "request": {"Student": {}} 
                             };
             $("#PersonForm").alpaca({
-                "schemaSource": "./schema/Person.json",
+                "schemaSource": "./schema/Student.json",
                 "options": {
                     "validate": true,
                     "fields": {
@@ -84,7 +84,7 @@
                                 "click": function () {
                                     var value = this.getValue();
                                     cookedVal["id"] = "open-saber.registry.create";
-                                    cookedVal["request"]["Person"] = value;
+                                    cookedVal["request"]["Student"] = value;
                                     console.log(JSON.stringify(cookedVal));
 
                                     $.ajax({url: "http://localhost:8080/add", 
