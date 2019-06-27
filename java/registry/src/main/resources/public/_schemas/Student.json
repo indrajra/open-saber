@@ -16,85 +16,69 @@
       "type": "object",
       "title": "The Student Schema",
       "required": [
-        "studentName",
-        "birthDate",
-        "highestQualification",
-        "fatherName",
-        "address",
-        "district",
-        "state",
-        "dateOfAdmission",
-        "trade",
-        "itiCode"
+        "TraineeName",
+        "DOB",
+        "Qualification",
+        "FatherGuardianName",
+        "PermanentAddress",
+        "PermanentDistrict",
+        "PermanentState",
+        "AdmissionDate",
+        "TradeName",
+        "AdmissionCenter"
       ],
       "properties": {
-        "studentName": {
-          "$id": "#/properties/studentName",
+        "TraineeName": {
+          "$id": "#/properties/TraineeName",
           "type": "string",
-          "title": "Full name"
+          "title": "Trainee name"
         },
-        "birthDate": {
-          "$id": "#/properties/birthDate",
+        "DOB": {
+          "$id": "#/properties/DOB",
           "type": "string",
           "format": "date",
-          "$comment": "YYYY-MM-DD format",
-          "examples": [
-            "1990-12-01"
-          ]
+          "title": "Date of birth"
         },
-        "highestQualification": {
-          "$id": "#/properties/highestQualification",
+        "Qualification": {
+          "$id": "#/properties/Qualification",
           "type": "string",
           "title": "Highest qualification"
         },
-        "fatherName": {
-          "$id": "#/properties/fatherName",
+        "FatherGuardianName": {
+          "$id": "#/properties/FatherGuardianName",
           "type": "string",
-          "title": "Father name"
+          "title": "Father/Guardian name"
         },
-        "address": {
+        "PermanentAddress": {
           "$id": "#/properties/Address",
           "type": "string",
           "title": "Address"
         },
-        "district": {
+        "PermanentDistrict": {
           "$id": "#/properties/District",
           "type": "string",
           "title": "District"
         },
-        "state": {
+        "PermanentState": {
           "$id": "#/properties/State",
           "type": "string",
-          "title": "State",
-          "enum": [
-            "UP",
-            "TN",
-            "KL",
-            "KA"
-          ],
-          "examples": [
-            "KA"
-          ]
+          "title": "State"
         },
-        "dateofAdmission": {
+        "AdmissionDate": {
           "$id": "#/properties/DateofAdmission",
           "type": "string",
           "format": "date",
-          "$comment": "YYYY-MM-DD format",
-          "examples": [
-            "1990-12-01"
-          ],
           "title": "Date of Admission"
         },
-        "trade": {
+        "TradeName": {
           "$id": "#/properties/Trade",
           "type": "string",
           "title": "Trade"
         },
-        "itiCode": {
+        "AdmissionCenter": {
           "$id": "#/properties/ITICode",
           "type": "string",
-          "title": "Trade"
+          "title": "Admission Center"
         }
       }
     }

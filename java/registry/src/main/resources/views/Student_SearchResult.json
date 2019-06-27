@@ -1,0 +1,18 @@
+{
+    "subject": "Student",
+    "fields": [
+      {
+        "name": "TraineeName",
+        "title": "Student Name",
+        "display": true
+      },
+      {
+        "name": "PermanentState",
+        "title": "State"
+      },
+      {
+        "name": "PermanentDistrict",
+        "title": "District"
+      }
+    ]
+  }

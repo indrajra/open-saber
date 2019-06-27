@@ -180,7 +180,7 @@
 
         function searchByQuery(key) {
             cookedVal.request.filters = {
-                "name": { "contains": key.value }
+                "StudentName": { "contains": key.value }
             }
             $.ajax({
                 url: "http://localhost:8080/search",
