@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "TrainingCenter": {
+      "$ref": "#/definitions/TrainingCenter"
+    }
+  },
+  "title": "TrainingCenter",
+  "required": [
+    "TrainingCenter"
+  ],
+  "definitions": {
+    "TrainingCenter": {
+      "$id": "#/properties/TrainingCenter",
+      "type": "object",
+      "title": "The TrainingCenter Schema",
+      "required": [
+
+      ],
+      "properties": {
+        "Name": {
+          "$id": "#/properties/CenterName",
+          "type": "string",
+          "title": "Training center name"
+        }
+      }
+    }
+  }
+}

@@ -115,7 +115,7 @@
                         }
                     });
 
-                    $('table thead tr').append("<th> <div data-localize='actions'>" +  'Actions' + '</div></th>');
+                    //$('table thead tr').append("<th> <div data-localize='actions'>" +  'Actions' + '</div></th>');
                     console.log('person Records',personRecords,colHeader);
                     for (var idx = 0; idx < personRecords.length; idx++) {
                         var approved = false;
@@ -132,11 +132,11 @@
                         }
                         console.log("approved = " + approved)
                         if (approved === false) {
-                            row = "<td><button type='button' class='btn btn-primary' data-localize='approve' onclick=approveFn(" + JSON.stringify(personRecords[idx].osid) + ")>Approve</button></td>";
-                            $('table tbody tr').last().append(row);
+                            //row = "<td><button type='button' class='btn btn-primary' data-localize='approve' onclick=approveFn(" + JSON.stringify(personRecords[idx].osid) + ")>Approve</button></td>";
+                            //$('table tbody tr').last().append(row);
                         } else {
-                            row = "<td><label style='color: green;font-size: 1rem;' data-localize='verifiedRecord'><i class='fa fa-check-circle pr-1' style='color:green;font-size: small !important;'></i>Verified record</label></td>";
-                            $('table tbody tr').last().append(row);
+                            //row = "<td><label style='color: green;font-size: 1rem;' data-localize='verifiedRecord'><i class='fa fa-check-circle pr-1' style='color:green;font-size: small !important;'></i>Verified record</label></td>";
+                            //$('table tbody tr').last().append(row);
                         }
                         if (lang === 'English') {
                             langId = 'uniqueId'
@@ -180,7 +180,7 @@
 
         function searchByQuery(key) {
             cookedVal.request.filters = {
-                "StudentName": { "contains": key.value }
+                "TraineeName": { "contains": key.value }
             }
             $.ajax({
                 url: "http://localhost:8080/search",
