@@ -2,34 +2,34 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "properties": {
-    "EmployeeCode": {
-      "$ref": "#/definitions/EmployeeCode"
+    "Period": {
+      "$ref": "#/definitions/Period"
     }
   },
   "required": [
-    "EmployeeCode"
+    "Period"
   ],
-  "title": "EmployeeCode",
+  "title": "Period",
   "definitions": {
-    "EmployeeCode": {
-      "$id": "#/properties/EmployeeCode",
+    "Period": {
+      "$id": "#/properties/Period",
       "type": "object",
-      "title": "The Employee Code Schema",
+      "title": "The Period Schema",
       "required": [
-        "prefix",
-        "nextCode"
+        "start"
       ],
       "properties": {
-        "prefix": {
-          "$id": "#/properties/orgName",
+        "start": {
+          "$id": "#/properties/start",
           "type": "string",
-          "default": "EPR",
-          "title": "Prefix"
+          "format": "date-time",
+          "$comment": "Starting time with inclusive boundary"
         },
-        "nextCode": {
-          "$id": "#/properties/nextCode",
-          "type": "number",
-          "$comment": "Employee code"
+        "end": {
+          "$id": "#/properties/end",
+          "type": "string",
+          "format": "date-time",
+          "$comment": "End time with inclusive boundary, if not ongoing"
         }
       }
     }
@@ -43,7 +43,7 @@
       "uniqueIndexFields: Optional; list of field names used for creating unique index. Field names must be different from index field name",
       "systemFields: Optional; list of fields names used for system standard information like created, updated timestamps and userid"
     ],
-    "privateFields": ["",""],
+    "privateFields": [],
     "signedFields": [],
     "indexFields": [],
     "uniqueIndexFields": [],

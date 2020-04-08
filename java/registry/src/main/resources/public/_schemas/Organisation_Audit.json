@@ -2,17 +2,17 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "properties": {
-    "Employee_Audit": {
-      "$ref": "#/definitions/Employee_Audit"
+    "Organisation_Audit": {
+      "$ref": "#/definitions/Organisation_Audit"
     }
   },
   "required": [
-    "Employee_Audit"
+    "Organisation_Audit"
   ],
-  "title": "Employee_Audit",
+  "title": "Organisation_Audit",
   "definitions": {
-    "Employee_Audit": {
-      "$id": "#/properties/Employee_Audit",
+    "Organisation_Audit": {
+      "$id": "#/properties/Organisation_Audit",
       "type": "object",
       "title": "The Test Schema",
       "required": [
