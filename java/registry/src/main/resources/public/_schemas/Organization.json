@@ -2,29 +2,35 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "properties": {
-    "Organisation": {
-      "$ref": "#/definitions/Organisation"
+    "Organization": {
+      "$ref": "#/definitions/Organization"
     }
   },
   "required": [
-    "Organisation"
+    "Organization"
   ],
-  "title": "Organisation",
+  "title": "Organization",
+  "additionalProperties": false,
   "definitions": {
-    "Organisation": {
-      "$id": "#/properties/Organisation",
+    "Organization": {
+      "$id": "#/properties/Organization",
       "type": "object",
-      "title": "The Organisation Schema",
+      "title": "The Organization Schema",
       "required": [
         "name",
         "type",
-        "telecom"
+        "testTelecom"
       ],
       "properties": {
+        "resourceType": {
+          "$id": "#/properties/resourceType",
+          "type": "string",
+          "default": "Organization"
+        },
         "name": {
           "$id": "#/properties/name",
           "type": "string",
-          "$comment": "Name used for the organisation"
+          "$comment": "Name used for the Organization"
         },
         "alias": {
           "$id": "#/properties/alias",
@@ -54,9 +60,15 @@
           "type": "string",
           "$comment": "// The organization of which this organization forms a part"
         },
+        "testTelecom": {
+          "$ref": "ContactPoint.json#/definitions/ContactPoint"
+        },
         "telecom": {
-          "$id": "#/properties/telecom",
-          "$ref": "ContactPoint.json#/definitions/ContactPoint",
+          "$id": "#/properties/telecomArr",
+          "type": "array",
+          "items": {
+            "$ref": "ContactPoint.json#/definitions/ContactPoint"
+          },
           "$comment": "// The organization of which this organization forms a part"
         }
       }

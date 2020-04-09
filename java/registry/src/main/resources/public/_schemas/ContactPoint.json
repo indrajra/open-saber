@@ -10,6 +10,7 @@
     "contactPoint"
   ],
   "title": "ContactPoint",
+  "additionalProperties": false,
   "definitions": {
     "ContactPoint": {
       "$id": "#/properties/ContactPoint",
